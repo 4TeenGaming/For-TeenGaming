@@ -1,413 +1,344 @@
-# Changelog
-
-### 0.19.2 (Jan 20, 2020)
-
-- Remove unnecessary XSS check ([#2679](https://github.com/axios/axios/pull/2679)) (see ([#2646](https://github.com/axios/axios/issues/2646)) for discussion)
-
-### 0.19.1 (Jan 7, 2020)
-
-Fixes and Functionality:
-
-- Fixing invalid agent issue ([#1904](https://github.com/axios/axios/pull/1904))
-- Fix ignore set withCredentials false ([#2582](https://github.com/axios/axios/pull/2582))
-- Delete useless default to hash ([#2458](https://github.com/axios/axios/pull/2458))
-- Fix HTTP/HTTPs agents passing to follow-redirect ([#1904](https://github.com/axios/axios/pull/1904))
-- Fix ignore set withCredentials false ([#2582](https://github.com/axios/axios/pull/2582))
-- Fix CI build failure ([#2570](https://github.com/axios/axios/pull/2570))
-- Remove dependency on is-buffer from package.json ([#1816](https://github.com/axios/axios/pull/1816))
-- Adding options typings ([#2341](https://github.com/axios/axios/pull/2341))
-- Adding Typescript HTTP method definition for LINK and UNLINK. ([#2444](https://github.com/axios/axios/pull/2444))
-- Update dist with newest changes, fixes Custom Attributes issue
-- Change syntax to see if build passes ([#2488](https://github.com/axios/axios/pull/2488))
-- Update Webpack + deps, remove now unnecessary polyfills ([#2410](https://github.com/axios/axios/pull/2410))
-- Fix to prevent XSS, throw an error when the URL contains a JS script ([#2464](https://github.com/axios/axios/pull/2464))
-- Add custom timeout error copy in config ([#2275](https://github.com/axios/axios/pull/2275))
-- Add error toJSON example ([#2466](https://github.com/axios/axios/pull/2466))
-- Fixing Vulnerability A Fortify Scan finds a critical Cross-Site Scrip… ([#2451](https://github.com/axios/axios/pull/2451))
-- Fixing subdomain handling on no_proxy ([#2442](https://github.com/axios/axios/pull/2442))
-- Make redirection from HTTP to HTTPS work ([#2426](https://github.com/axios/axios/pull/2426] and ([#2547](https://github.com/axios/axios/pull/2547))
-- Add toJSON property to AxiosError type ([#2427](https://github.com/axios/axios/pull/2427))
-- Fixing socket hang up error on node side for slow response. ([#1752](https://github.com/axios/axios/pull/1752))
-- Alternative syntax to send data into the body ([#2317](https://github.com/axios/axios/pull/2317))
-- Fixing custom config options ([#2207](https://github.com/axios/axios/pull/2207))
-- Fixing set `config.method` after mergeConfig for Axios.prototype.request ([#2383](https://github.com/axios/axios/pull/2383))
-- Axios create url bug ([#2290](https://github.com/axios/axios/pull/2290))
-- Do not modify config.url when using a relative baseURL (resolves [#1628](https://github.com/axios/axios/issues/1098)) ([#2391](https://github.com/axios/axios/pull/2391))
-- Add typescript HTTP method definition for LINK and UNLINK ([#2444](https://github.com/axios/axios/pull/2444))
-
-Internal:
-
-- Revert "Update Webpack + deps, remove now unnecessary polyfills" ([#2479](https://github.com/axios/axios/pull/2479))
-- Order of if/else blocks is causing unit tests mocking XHR. ([#2201](https://github.com/axios/axios/pull/2201))
-- Add license badge ([#2446](https://github.com/axios/axios/pull/2446))
-- Fix travis CI build [#2386](https://github.com/axios/axios/pull/2386)
-- Fix cancellation error on build master. #2290 #2207 ([#2407](https://github.com/axios/axios/pull/2407))
-
-Documentation:
-
-- Fixing typo in CHANGELOG.md: s/Functionallity/Functionality ([#2639](https://github.com/axios/axios/pull/2639))
-- Fix badge, use master branch ([#2538](https://github.com/axios/axios/pull/2538))
-- Fix typo in changelog [#2193](https://github.com/axios/axios/pull/2193)
-- Document fix ([#2514](https://github.com/axios/axios/pull/2514))
-- Update docs with no_proxy change, issue #2484 ([#2513](https://github.com/axios/axios/pull/2513))
-- Fixing missing words in docs template ([#2259](https://github.com/axios/axios/pull/2259))
-- 🐛Fix request finally documentation in README ([#2189](https://github.com/axios/axios/pull/2189))
-- updating spelling and adding link to docs ([#2212](https://github.com/axios/axios/pull/2212))
-- docs: minor tweak ([#2404](https://github.com/axios/axios/pull/2404))
-- Update response interceptor docs ([#2399](https://github.com/axios/axios/pull/2399))
-- Update README.md ([#2504](https://github.com/axios/axios/pull/2504))
-- Fix word 'sintaxe' to 'syntax' in README.md ([#2432](https://github.com/axios/axios/pull/2432))
-- upadating README: notes on CommonJS autocomplete ([#2256](https://github.com/axios/axios/pull/2256))
-- Fix grammar in README.md ([#2271](https://github.com/axios/axios/pull/2271))
-- Doc fixes, minor examples cleanup ([#2198](https://github.com/axios/axios/pull/2198))
-
-### 0.19.0 (May 30, 2019)
-
-Fixes and Functionality:
-
-- Added support for no_proxy env variable ([#1693](https://github.com/axios/axios/pull/1693/files)) - Chance Dickson
-- Unzip response body only for statuses != 204 ([#1129](https://github.com/axios/axios/pull/1129)) - drawski
-- Destroy stream on exceeding maxContentLength (fixes [#1098](https://github.com/axios/axios/issues/1098)) ([#1485](https://github.com/axios/axios/pull/1485)) - Gadzhi Gadzhiev
-- Makes Axios error generic to use AxiosResponse ([#1738](https://github.com/axios/axios/pull/1738)) - Suman Lama
-- Fixing Mocha tests by locking follow-redirects version to 1.5.10 ([#1993](https://github.com/axios/axios/pull/1993)) - grumblerchester
-- Allow uppercase methods in typings. ([#1781](https://github.com/axios/axios/pull/1781)) - Ken Powers
-- Fixing building url with hash mark ([#1771](https://github.com/axios/axios/pull/1771)) - Anatoly Ryabov
-- This commit fix building url with hash map (fragment identifier) when parameters are present: they must not be added after `#`, because client cut everything after `#`
-- Preserve HTTP method when following redirect ([#1758](https://github.com/axios/axios/pull/1758)) - Rikki Gibson
-- Add `getUri` signature to TypeScript definition. ([#1736](https://github.com/axios/axios/pull/1736)) - Alexander Trauzzi
-- Adding isAxiosError flag to errors thrown by axios ([#1419](https://github.com/axios/axios/pull/1419)) - Ayush Gupta
-
-Internal:
-
-- Fixing .eslintrc without extension ([#1789](https://github.com/axios/axios/pull/1789)) - Manoel
-- Fix failing SauceLabs tests by updating configuration - Emily Morehouse
-- Add issue templates - Emily Morehouse
-
-Documentation:
-
-- Consistent coding style in README ([#1787](https://github.com/axios/axios/pull/1787)) - Ali Servet Donmez
-- Add information about auth parameter to README ([#2166](https://github.com/axios/axios/pull/2166)) - xlaguna
-- Add DELETE to list of methods that allow data as a config option ([#2169](https://github.com/axios/axios/pull/2169)) - Daniela Borges Matos de Carvalho
-- Update ECOSYSTEM.md - Add Axios Endpoints ([#2176](https://github.com/axios/axios/pull/2176)) - Renan
-- Add r2curl in ECOSYSTEM ([#2141](https://github.com/axios/axios/pull/2141)) - 유용우 / CX
-- Update README.md - Add instructions for installing with yarn ([#2036](https://github.com/axios/axios/pull/2036)) - Victor Hermes
-- Fixing spacing for README.md ([#2066](https://github.com/axios/axios/pull/2066)) - Josh McCarty
-- Update README.md. - Change `.then` to `.finally` in example code ([#2090](https://github.com/axios/axios/pull/2090)) - Omar Cai
-- Clarify what values responseType can have in Node ([#2121](https://github.com/axios/axios/pull/2121)) - Tyler Breisacher
-- docs(ECOSYSTEM): add axios-api-versioning ([#2020](https://github.com/axios/axios/pull/2020)) - Weffe
-- It seems that `responseType: 'blob'` doesn't actually work in Node (when I tried using it, response.data was a string, not a Blob, since Node doesn't have Blobs), so this clarifies that this option should only be used in the browser
-- Update README.md. - Add Querystring library note ([#1896](https://github.com/axios/axios/pull/1896)) - Dmitriy Eroshenko
-- Add react-hooks-axios to Libraries section of ECOSYSTEM.md ([#1925](https://github.com/axios/axios/pull/1925)) - Cody Chan
-- Clarify in README that default timeout is 0 (no timeout) ([#1750](https://github.com/axios/axios/pull/1750)) - Ben Standefer
-
-### 0.19.0-beta.1 (Aug 9, 2018)
-
-**NOTE:** This is a beta version of this release. There may be functionality that is broken in
-certain browsers, though we suspect that builds are hanging and not erroring. See
-https://saucelabs.com/u/axios for the most up-to-date information.
-
-New Functionality:
-
-- Add getUri method ([#1712](https://github.com/axios/axios/issues/1712))
-- Add support for no_proxy env variable ([#1693](https://github.com/axios/axios/issues/1693))
-- Add toJSON to decorated Axios errors to faciliate serialization ([#1625](https://github.com/axios/axios/issues/1625))
-- Add second then on axios call ([#1623](https://github.com/axios/axios/issues/1623))
-- Typings: allow custom return types
-- Add option to specify character set in responses (with http adapter)
-
-Fixes:
-
-- Fix Keep defaults local to instance ([#385](https://github.com/axios/axios/issues/385))
-- Correctly catch exception in http test ([#1475](https://github.com/axios/axios/issues/1475))
-- Fix accept header normalization ([#1698](https://github.com/axios/axios/issues/1698))
-- Fix http adapter to allow HTTPS connections via HTTP ([#959](https://github.com/axios/axios/issues/959))
-- Fix Removes usage of deprecated Buffer constructor. ([#1555](https://github.com/axios/axios/issues/1555), [#1622](https://github.com/axios/axios/issues/1622))
-- Fix defaults to use httpAdapter if available ([#1285](https://github.com/axios/axios/issues/1285))
-  - Fixing defaults to use httpAdapter if available
-  - Use a safer, cross-platform method to detect the Node environment
-- Fix Reject promise if request is cancelled by the browser ([#537](https://github.com/axios/axios/issues/537))
-- [Typescript] Fix missing type parameters on delete/head methods
-- [NS]: Send `false` flag isStandardBrowserEnv for Nativescript
-- Fix missing type parameters on delete/head
-- Fix Default method for an instance always overwritten by get
-- Fix type error when socketPath option in AxiosRequestConfig
-- Capture errors on request data streams
-- Decorate resolve and reject to clear timeout in all cases
-
-Huge thanks to everyone who contributed to this release via code (authors listed
-below) or via reviews and triaging on GitHub:
-
-- Andrew Scott <ascott18@gmail.com>
-- Anthony Gauthier <antho325@hotmail.com>
-- arpit <arpit2438735@gmail.com>
-- ascott18
-- Benedikt Rötsch <axe312ger@users.noreply.github.com>
-- Chance Dickson <me@chancedickson.com>
-- Dave Stewart <info@davestewart.co.uk>
-- Deric Cain <deric.cain@gmail.com>
-- Guillaume Briday <guillaumebriday@gmail.com>
-- Jacob Wejendorp <jacob@wejendorp.dk>
-- Jim Lynch <mrdotjim@gmail.com>
-- johntron
-- Justin Beckwith <beckwith@google.com>
-- Justin Beckwith <justin.beckwith@gmail.com>
-- Khaled Garbaya <khaledgarbaya@gmail.com>
-- Lim Jing Rong <jjingrong@users.noreply.github.com>
-- Mark van den Broek <mvdnbrk@gmail.com>
-- Martti Laine <martti@codeclown.net>
-- mattridley
-- mattridley <matt.r@joinblink.com>
-- Nicolas Del Valle <nicolas.delvalle@gmail.com>
-- Nilegfx
-- pbarbiero
-- Rikki Gibson <rikkigibson@gmail.com>
-- Sako Hartounian <sakohartounian@yahoo.com>
-- Shane Fitzpatrick <fitzpasd@gmail.com>
-- Stephan Schneider <stephanschndr@gmail.com>
-- Steven <steven@ceriously.com>
-- Tim Garthwaite <tim.garthwaite@jibo.com>
-- Tim Johns <timjohns@yahoo.com>
-- Yutaro Miyazaki <yutaro@studio-rubbish.com>
-
-### 0.18.0 (Feb 19, 2018)
-
-- Adding support for UNIX Sockets when running with Node.js ([#1070](https://github.com/axios/axios/pull/1070))
-- Fixing typings ([#1177](https://github.com/axios/axios/pull/1177)):
-  - AxiosRequestConfig.proxy: allows type false
-  - AxiosProxyConfig: added auth field
-- Adding function signature in AxiosInstance interface so AxiosInstance can be invoked ([#1192](https://github.com/axios/axios/pull/1192), [#1254](https://github.com/axios/axios/pull/1254))
-- Allowing maxContentLength to pass through to redirected calls as maxBodyLength in follow-redirects config ([#1287](https://github.com/axios/axios/pull/1287))
-- Fixing configuration when using an instance - method can now be set ([#1342](https://github.com/axios/axios/pull/1342))
-
-### 0.17.1 (Nov 11, 2017)
-
-- Fixing issue with web workers ([#1160](https://github.com/axios/axios/pull/1160))
-- Allowing overriding transport ([#1080](https://github.com/axios/axios/pull/1080))
-- Updating TypeScript typings ([#1165](https://github.com/axios/axios/pull/1165), [#1125](https://github.com/axios/axios/pull/1125), [#1131](https://github.com/axios/axios/pull/1131))
-
-### 0.17.0 (Oct 21, 2017)
-
-- **BREAKING** Fixing issue with `baseURL` and interceptors ([#950](https://github.com/axios/axios/pull/950))
-- **BREAKING** Improving handing of duplicate headers ([#874](https://github.com/axios/axios/pull/874))
-- Adding support for disabling proxies ([#691](https://github.com/axios/axios/pull/691))
-- Updating TypeScript typings with generic type parameters ([#1061](https://github.com/axios/axios/pull/1061))
-
-### 0.16.2 (Jun 3, 2017)
-
-- Fixing issue with including `buffer` in bundle ([#887](https://github.com/axios/axios/pull/887))
-- Including underlying request in errors ([#830](https://github.com/axios/axios/pull/830))
-- Convert `method` to lowercase ([#930](https://github.com/axios/axios/pull/930))
-
-### 0.16.1 (Apr 8, 2017)
-
-- Improving HTTP adapter to return last request in case of redirects ([#828](https://github.com/axios/axios/pull/828))
-- Updating `follow-redirects` dependency ([#829](https://github.com/axios/axios/pull/829))
-- Adding support for passing `Buffer` in node ([#773](https://github.com/axios/axios/pull/773))
-
-### 0.16.0 (Mar 31, 2017)
-
-- **BREAKING** Removing `Promise` from axios typings in favor of built-in type declarations ([#480](https://github.com/axios/axios/issues/480))
-- Adding `options` shortcut method ([#461](https://github.com/axios/axios/pull/461))
-- Fixing issue with using `responseType: 'json'` in browsers incompatible with XHR Level 2 ([#654](https://github.com/axios/axios/pull/654))
-- Improving React Native detection ([#731](https://github.com/axios/axios/pull/731))
-- Fixing `combineURLs` to support empty `relativeURL` ([#581](https://github.com/axios/axios/pull/581))
-- Removing `PROTECTION_PREFIX` support ([#561](https://github.com/axios/axios/pull/561))
-
-### 0.15.3 (Nov 27, 2016)
-
-- Fixing issue with custom instances and global defaults ([#443](https://github.com/axios/axios/issues/443))
-- Renaming `axios.d.ts` to `index.d.ts` ([#519](https://github.com/axios/axios/issues/519))
-- Adding `get`, `head`, and `delete` to `defaults.headers` ([#509](https://github.com/axios/axios/issues/509))
-- Fixing issue with `btoa` and IE ([#507](https://github.com/axios/axios/issues/507))
-- Adding support for proxy authentication ([#483](https://github.com/axios/axios/pull/483))
-- Improving HTTP adapter to use `http` protocol by default ([#493](https://github.com/axios/axios/pull/493))
-- Fixing proxy issues ([#491](https://github.com/axios/axios/pull/491))
-
-### 0.15.2 (Oct 17, 2016)
-
-- Fixing issue with calling `cancel` after response has been received ([#482](https://github.com/axios/axios/issues/482))
-
-### 0.15.1 (Oct 14, 2016)
-
-- Fixing issue with UMD ([#485](https://github.com/axios/axios/issues/485))
-
-### 0.15.0 (Oct 10, 2016)
-
-- Adding cancellation support ([#452](https://github.com/axios/axios/pull/452))
-- Moving default adapter to global defaults ([#437](https://github.com/axios/axios/pull/437))
-- Fixing issue with `file` URI scheme ([#440](https://github.com/axios/axios/pull/440))
-- Fixing issue with `params` objects that have no prototype ([#445](https://github.com/axios/axios/pull/445))
-
-### 0.14.0 (Aug 27, 2016)
-
-- **BREAKING** Updating TypeScript definitions ([#419](https://github.com/axios/axios/pull/419))
-- **BREAKING** Replacing `agent` option with `httpAgent` and `httpsAgent` ([#387](https://github.com/axios/axios/pull/387))
-- **BREAKING** Splitting `progress` event handlers into `onUploadProgress` and `onDownloadProgress` ([#423](https://github.com/axios/axios/pull/423))
-- Adding support for `http_proxy` and `https_proxy` environment variables ([#366](https://github.com/axios/axios/pull/366))
-- Fixing issue with `auth` config option and `Authorization` header ([#397](https://github.com/axios/axios/pull/397))
-- Don't set XSRF header if `xsrfCookieName` is `null` ([#406](https://github.com/axios/axios/pull/406))
-
-### 0.13.1 (Jul 16, 2016)
-
-- Fixing issue with response data not being transformed on error ([#378](https://github.com/axios/axios/issues/378))
-
-### 0.13.0 (Jul 13, 2016)
-
-- **BREAKING** Improved error handling ([#345](https://github.com/axios/axios/pull/345))
-- **BREAKING** Response transformer now invoked in dispatcher not adapter ([10eb238](https://github.com/axios/axios/commit/10eb23865101f9347570552c04e9d6211376e25e))
-- **BREAKING** Request adapters now return a `Promise` ([157efd5](https://github.com/axios/axios/commit/157efd5615890301824e3121cc6c9d2f9b21f94a))
-- Fixing issue with `withCredentials` not being overwritten ([#343](https://github.com/axios/axios/issues/343))
-- Fixing regression with request transformer being called before request interceptor ([#352](https://github.com/axios/axios/issues/352))
-- Fixing custom instance defaults ([#341](https://github.com/axios/axios/issues/341))
-- Fixing instances created from `axios.create` to have same API as default axios ([#217](https://github.com/axios/axios/issues/217))
-
-### 0.12.0 (May 31, 2016)
-
-- Adding support for `URLSearchParams` ([#317](https://github.com/axios/axios/pull/317))
-- Adding `maxRedirects` option ([#307](https://github.com/axios/axios/pull/307))
-
-### 0.11.1 (May 17, 2016)
-
-- Fixing IE CORS support ([#313](https://github.com/axios/axios/pull/313))
-- Fixing detection of `FormData` ([#325](https://github.com/axios/axios/pull/325))
-- Adding `Axios` class to exports ([#321](https://github.com/axios/axios/pull/321))
-
-### 0.11.0 (Apr 26, 2016)
-
-- Adding support for Stream with HTTP adapter ([#296](https://github.com/axios/axios/pull/296))
-- Adding support for custom HTTP status code error ranges ([#308](https://github.com/axios/axios/pull/308))
-- Fixing issue with ArrayBuffer ([#299](https://github.com/axios/axios/pull/299))
-
-### 0.10.0 (Apr 20, 2016)
-
-- Fixing issue with some requests sending `undefined` instead of `null` ([#250](https://github.com/axios/axios/pull/250))
-- Fixing basic auth for HTTP adapter ([#252](https://github.com/axios/axios/pull/252))
-- Fixing request timeout for XHR adapter ([#227](https://github.com/axios/axios/pull/227))
-- Fixing IE8 support by using `onreadystatechange` instead of `onload` ([#249](https://github.com/axios/axios/pull/249))
-- Fixing IE9 cross domain requests ([#251](https://github.com/axios/axios/pull/251))
-- Adding `maxContentLength` option ([#275](https://github.com/axios/axios/pull/275))
-- Fixing XHR support for WebWorker environment ([#279](https://github.com/axios/axios/pull/279))
-- Adding request instance to response ([#200](https://github.com/axios/axios/pull/200))
-
-### 0.9.1 (Jan 24, 2016)
+### v2.1.3 [[code][c2.1.3], [diff][d2.1.3]]
 
-- Improving handling of request timeout in node ([#124](https://github.com/axios/axios/issues/124))
-- Fixing network errors not rejecting ([#205](https://github.com/axios/axios/pull/205))
-- Fixing issue with IE rejecting on HTTP 204 ([#201](https://github.com/axios/axios/issues/201))
-- Fixing host/port when following redirects ([#198](https://github.com/axios/axios/pull/198))
+[c2.1.3]: https://github.com/json5/json5/tree/v2.1.3
+[d2.1.3]: https://github.com/json5/json5/compare/v2.1.2...v2.1.3
 
-### 0.9.0 (Jan 18, 2016)
+- Fix: An out of memory bug when parsing numbers has been fixed. ([#228],
+  [#229])
 
-- Adding support for custom adapters
-- Fixing Content-Type header being removed when data is false ([#195](https://github.com/axios/axios/pull/195))
-- Improving XDomainRequest implementation ([#185](https://github.com/axios/axios/pull/185))
-- Improving config merging and order of precedence ([#183](https://github.com/axios/axios/pull/183))
-- Fixing XDomainRequest support for only <= IE9 ([#182](https://github.com/axios/axios/pull/182))
+### v2.1.2 [[code][c2.1.2], [diff][d2.1.2]]
 
-### 0.8.1 (Dec 14, 2015)
+[c2.1.2]: https://github.com/json5/json5/tree/v2.1.2
+[d2.1.2]: https://github.com/json5/json5/compare/v2.1.1...v2.1.2
 
-- Adding support for passing XSRF token for cross domain requests when using `withCredentials` ([#168](https://github.com/axios/axios/pull/168))
-- Fixing error with format of basic auth header ([#178](https://github.com/axios/axios/pull/173))
-- Fixing error with JSON payloads throwing `InvalidStateError` in some cases ([#174](https://github.com/axios/axios/pull/174))
+- Fix: Bump `minimist` to `v1.2.5`. ([#222])
 
-### 0.8.0 (Dec 11, 2015)
+### v2.1.1 [[code][c2.1.1], [diff][d2.1.1]]
 
-- Adding support for creating instances of axios ([#123](https://github.com/axios/axios/pull/123))
-- Fixing http adapter to use `Buffer` instead of `String` in case of `responseType === 'arraybuffer'` ([#128](https://github.com/axios/axios/pull/128))
-- Adding support for using custom parameter serializer with `paramsSerializer` option ([#121](https://github.com/axios/axios/pull/121))
-- Fixing issue in IE8 caused by `forEach` on `arguments` ([#127](https://github.com/axios/axios/pull/127))
-- Adding support for following redirects in node ([#146](https://github.com/axios/axios/pull/146))
-- Adding support for transparent decompression if `content-encoding` is set ([#149](https://github.com/axios/axios/pull/149))
-- Adding support for transparent XDomainRequest to handle cross domain requests in IE9 ([#140](https://github.com/axios/axios/pull/140))
-- Adding support for HTTP basic auth via Authorization header ([#167](https://github.com/axios/axios/pull/167))
-- Adding support for baseURL option ([#160](https://github.com/axios/axios/pull/160))
+[c2.1.1]: https://github.com/json5/json5/tree/v2.1.1
+[d2.1.1]: https://github.com/json5/json5/compare/v2.0.1...v2.1.1
 
-### 0.7.0 (Sep 29, 2015)
+- New: `package.json` and `package.json5` include a `module` property so
+  bundlers like webpack, rollup and parcel can take advantage of the ES Module
+  build. ([#208])
+- Fix: `stringify` outputs `\0` as `\\x00` when followed by a digit. ([#210])
+- Fix: Spelling mistakes have been fixed. ([#196])
 
-- Fixing issue with minified bundle in IE8 ([#87](https://github.com/axios/axios/pull/87))
-- Adding support for passing agent in node ([#102](https://github.com/axios/axios/pull/102))
-- Adding support for returning result from `axios.spread` for chaining ([#106](https://github.com/axios/axios/pull/106))
-- Fixing typescript definition ([#105](https://github.com/axios/axios/pull/105))
-- Fixing default timeout config for node ([#112](https://github.com/axios/axios/pull/112))
-- Adding support for use in web workers, and react-native ([#70](https://github.com/axios/axios/issue/70)), ([#98](https://github.com/axios/axios/pull/98))
-- Adding support for fetch like API `axios(url[, config])` ([#116](https://github.com/axios/axios/issues/116))
+### v2.1.0 [[code][c2.1.0], [diff][d2.1.0]]
 
-### 0.6.0 (Sep 21, 2015)
+[c2.1.0]: https://github.com/json5/json5/tree/v2.1.0
+[d2.1.0]: https://github.com/json5/json5/compare/v2.0.1...v2.1.0
 
-- Removing deprecated success/error aliases
-- Fixing issue with array params not being properly encoded ([#49](https://github.com/axios/axios/pull/49))
-- Fixing issue with User-Agent getting overridden ([#69](https://github.com/axios/axios/issues/69))
-- Adding support for timeout config ([#56](https://github.com/axios/axios/issues/56))
-- Removing es6-promise dependency
-- Fixing issue preventing `length` to be used as a parameter ([#91](https://github.com/axios/axios/pull/91))
-- Fixing issue with IE8 ([#85](https://github.com/axios/axios/pull/85))
-- Converting build to UMD
+- New: The `index.mjs` and `index.min.mjs` browser builds in the `dist`
+  directory support ES6 modules. ([#187])
 
-### 0.5.4 (Apr 08, 2015)
+### v2.0.1 [[code][c2.0.1], [diff][d2.0.1]]
 
-- Fixing issue with FormData not being sent ([#53](https://github.com/axios/axios/issues/53))
+[c2.0.1]: https://github.com/json5/json5/tree/v2.0.1
+[d2.0.1]: https://github.com/json5/json5/compare/v2.0.0...v2.0.1
 
-### 0.5.3 (Apr 07, 2015)
+- Fix: The browser builds in the `dist` directory support ES5. ([#182])
 
-- Using JSON.parse unconditionally when transforming response string ([#55](https://github.com/axios/axios/issues/55))
+### v2.0.0 [[code][c2.0.0], [diff][d2.0.0]]
 
-### 0.5.2 (Mar 13, 2015)
+[c2.0.0]: https://github.com/json5/json5/tree/v2.0.0
+[d2.0.0]: https://github.com/json5/json5/compare/v1.0.1...v2.0.0
 
-- Adding support for `statusText` in response ([#46](https://github.com/axios/axios/issues/46))
+- **Major**: JSON5 officially supports Node.js v6 and later. Support for Node.js
+  v4 has been dropped. Since Node.js v6 supports ES5 features, the code has been
+  rewritten in native ES5, and the dependence on Babel has been eliminated.
 
-### 0.5.1 (Mar 10, 2015)
+- New: Support for Unicode 10 has been added.
 
-- Fixing issue using strict mode ([#45](https://github.com/axios/axios/issues/45))
-- Fixing issue with standalone build ([#47](https://github.com/axios/axios/issues/47))
+- New: The test framework has been migrated from Mocha to Tap.
 
-### 0.5.0 (Jan 23, 2015)
+- New: The browser build at `dist/index.js` is no longer minified by default. A
+  minified version is available at `dist/index.min.js`. ([#181])
 
-- Adding support for intercepetors ([#14](https://github.com/axios/axios/issues/14))
-- Updating es6-promise dependency
+- Fix: The warning has been made clearer when line and paragraph separators are
+  used in strings.
 
-### 0.4.2 (Dec 10, 2014)
+- Fix: `package.json5` has been restored, and it is automatically generated and
+  committed when the version is bumped. A new `build-package` NPM script has
+  been added to facilitate this.
 
-- Fixing issue with `Content-Type` when using `FormData` ([#22](https://github.com/axios/axios/issues/22))
-- Adding support for TypeScript ([#25](https://github.com/axios/axios/issues/25))
-- Fixing issue with standalone build ([#29](https://github.com/axios/axios/issues/29))
-- Fixing issue with verbs needing to be capitalized in some browsers ([#30](https://github.com/axios/axios/issues/30))
+### v1.0.1 [[code][c1.0.1], [diff][d1.0.1]]
 
-### 0.4.1 (Oct 15, 2014)
+[c1.0.1]: https://github.com/json5/json5/tree/v1.0.1
+[d1.0.1]: https://github.com/json5/json5/compare/v1.0.0...v1.0.1
 
-- Adding error handling to request for node.js ([#18](https://github.com/axios/axios/issues/18))
+This release includes a bug fix and minor change.
 
-### 0.4.0 (Oct 03, 2014)
+- Fix: `parse` throws on unclosed objects and arrays.
 
-- Adding support for `ArrayBuffer` and `ArrayBufferView` ([#10](https://github.com/axios/axios/issues/10))
-- Adding support for utf-8 for node.js ([#13](https://github.com/axios/axios/issues/13))
-- Adding support for SSL for node.js ([#12](https://github.com/axios/axios/issues/12))
-- Fixing incorrect `Content-Type` header ([#9](https://github.com/axios/axios/issues/9))
-- Adding standalone build without bundled es6-promise ([#11](https://github.com/axios/axios/issues/11))
-- Deprecating `success`/`error` in favor of `then`/`catch`
+- New: `package.json5` has been removed until an easier way to keep it in sync
+  with `package.json` is found.
 
-### 0.3.1 (Sep 16, 2014)
 
-- Fixing missing post body when using node.js ([#3](https://github.com/axios/axios/issues/3))
+### v1.0.0 [[code][c1.0.0], [diff][d1.0.0]]
 
-### 0.3.0 (Sep 16, 2014)
+[c1.0.0]: https://github.com/json5/json5/tree/v1.0.0
+[d1.0.0]: https://github.com/json5/json5/compare/v0.5.1...v1.0.0
 
-- Fixing `success` and `error` to properly receive response data as individual arguments ([#8](https://github.com/axios/axios/issues/8))
-- Updating `then` and `catch` to receive response data as a single object ([#6](https://github.com/axios/axios/issues/6))
-- Fixing issue with `all` not working ([#7](https://github.com/axios/axios/issues/7))
+This release includes major internal changes and public API enhancements.
 
-### 0.2.2 (Sep 14, 2014)
+- **Major**: JSON5 officially supports Node.js v4 and later. Support for Node.js
+  v0.10 and v0.12 have been dropped.
 
-- Fixing bundling with browserify ([#4](https://github.com/axios/axios/issues/4))
+- New: Unicode property names and Unicode escapes in property names are
+  supported. ([#1])
 
-### 0.2.1 (Sep 12, 2014)
+- New: `stringify` outputs trailing commas in objects and arrays when a `space`
+  option is provided. ([#66])
 
-- Fixing build problem causing ridiculous file sizes
+- New: JSON5 allows line and paragraph separator characters (U+2028 and U+2029)
+  in strings in order to be compatible with JSON. However, ES5 does not allow
+  these characters in strings, so JSON5 gives a warning when they are parsed and
+  escapes them when they are stringified. ([#70])
 
-### 0.2.0 (Sep 12, 2014)
+- New: `stringify` accepts an options object as its second argument. The
+  supported options are `replacer`, `space`, and a new `quote` option that
+  specifies the quote character used in strings. ([#71])
 
-- Adding support for `all` and `spread`
-- Adding support for node.js ([#1](https://github.com/axios/axios/issues/1))
+- New: The CLI supports STDIN and STDOUT and adds `--out-file`, `--space`, and
+  `--validate` options. See `json5 --help` for more information. ([#72], [#84],
+  and [#108])
 
-### 0.1.0 (Aug 29, 2014)
+- New: In addition to the white space characters space `\t`, `\v`, `\f`, `\n`,
+  `\r`, and `\xA0`, the additional white space characters `\u2028`, `\u2029`,
+  and all other characters in the Space Separator Unicode category are allowed.
 
-- Initial release
+- New: In addition to the character escapes `\'`, `\"`, `\\`, `\b`, `\f`, `\n`,
+  `\r`, and `\t`, the additional character escapes `\v` and `\0`, hexadecimal
+  escapes like `\x0F`, and unnecessary escapes like `\a` are allowed in string
+  values and string property names.
+
+- New: `stringify` outputs strings with single quotes by default but
+  intelligently uses double quotes if there are more single quotes than double
+  quotes inside the string. (i.e. `stringify('Stay here.')` outputs
+  `'Stay here.'` while `stringify('Let\'s go.')` outputs `"Let's go."`)
+
+- New: When a character is not allowed in a string, `stringify` outputs a
+  character escape like `\t` when available, a hexadecimal escape like `\x0F`
+  when the Unicode code point is less than 256, or a Unicode character escape
+  like `\u01FF`, in that order.
+
+- New: `stringify` checks for a `toJSON5` method on objects and, if it exists,
+  stringifies its return value instead of the object. `toJSON5` overrides
+  `toJSON` if they both exist.
+
+- New: To `require` or `import` JSON5 files, use `require('json5/lib/register')`
+  or `import 'json5/lib/register'`. Previous versions used `json5/lib/require`,
+  which still exists for backward compatibility but is deprecated and will give
+  a warning.
+
+- New: To use JSON5 in browsers, use the file at `dist/index.js` or
+  `https://unpkg.com/json5@^1.0.0`.
+
+- Fix: `stringify` properly outputs `Infinity` and `NaN`. ([#67])
+
+- Fix: `isWord` no longer becomes a property of `JSON5` after calling
+  `stringify`. ([#68] and [#89])
+
+- Fix: `stringify` no longer throws when an object does not have a `prototype`.
+  ([#154])
+
+- Fix: `stringify` properly handles the `key` argument of `toJSON(key)` methods.
+  `toJSON5(key)` follows this pattern.
+
+- Fix: `stringify` accepts `Number` and `String` objects as its `space`
+  argument.
+
+- Fix: In addition to a function, `stringify` also accepts an array of keys to
+  include in the output as its `replacer` argument. Numbers, `Number` objects,
+  and `String` objects will be converted to a string if they are given as array
+  values.
+
+
+### v0.5.1 [[code][c0.5.1], [diff][d0.5.1]]
+
+[c0.5.1]: https://github.com/json5/json5/tree/v0.5.1
+[d0.5.1]: https://github.com/json5/json5/compare/v0.5.0...v0.5.1
+
+This release includes a minor fix for indentations when stringifying empty
+arrays.
+
+- Fix: Indents no longer appear in empty arrays when stringified. ([#134])
+
+
+### v0.5.0 [[code][c0.5.0], [diff][d0.5.0]]
+
+[c0.5.0]: https://github.com/json5/json5/tree/v0.5.0
+[d0.5.0]: https://github.com/json5/json5/compare/v0.4.0...v0.5.0
+
+This release includes major internal changes and public API enhancements.
+
+- **Major:** JSON5 officially supports Node.js v4 LTS and v5. Support for
+  Node.js v0.6 and v0.8 have been dropped, while support for v0.10 and v0.12
+  remain.
+
+- Fix: YUI Compressor no longer fails when compressing json5.js. ([#97])
+
+- New: `parse` and the CLI provide line and column numbers when displaying error
+  messages. ([#101]; awesome work by [@amb26].)
+
+
+### v0.4.0 [[code][c0.4.0], [diff][d0.4.0]]
+
+[c0.4.0]: https://github.com/json5/json5/tree/v0.4.0
+[d0.4.0]: https://github.com/json5/json5/compare/v0.2.0...v0.4.0
+
+Note that v0.3.0 was tagged, but never published to npm, so this v0.4.0
+changelog entry includes v0.3.0 features.
+
+This is a massive release that adds `stringify` support, among other things.
+
+- **Major:** `JSON5.stringify()` now exists!
+  This method is analogous to the native `JSON.stringify()`;
+  it just avoids quoting keys where possible.
+  See the [usage documentation](./README.md#usage) for more.
+  ([#32]; huge thanks and props [@aeisenberg]!)
+
+- New: `NaN` and `-NaN` are now allowed number literals.
+  ([#30]; thanks [@rowanhill].)
+
+- New: Duplicate object keys are now allowed; the last value is used.
+  This is the same behavior as JSON. ([#57]; thanks [@jordanbtucker].)
+
+- Fix: Properly handle various whitespace and newline cases now.
+  E.g. JSON5 now properly supports escaped CR and CRLF newlines in strings,
+  and JSON5 now accepts the same whitespace as JSON (stricter than ES5).
+  ([#58], [#60], and [#63]; thanks [@jordanbtucker].)
+
+- New: Negative hexadecimal numbers (e.g. `-0xC8`) are allowed again.
+  (They were disallowed in v0.2.0; see below.)
+  It turns out they *are* valid in ES5, so JSON5 supports them now too.
+  ([#36]; thanks [@jordanbtucker]!)
+
+
+### v0.2.0 [[code][c0.2.0], [diff][d0.2.0]]
+
+[c0.2.0]: https://github.com/json5/json5/tree/v0.2.0
+[d0.2.0]: https://github.com/json5/json5/compare/v0.1.0...v0.2.0
+
+This release fixes some bugs and adds some more utility features to help you
+express data more easily:
+
+- **Breaking:** Negative hexadecimal numbers (e.g. `-0xC8`) are rejected now.
+  While V8 (e.g. Chrome and Node) supported them, it turns out they're invalid
+  in ES5. This has been [fixed in V8][v8-hex-fix] (and by extension, Chrome
+  and Node), so JSON5 officially rejects them now, too. ([#36])
+
+- New: Trailing decimal points in decimal numbers are allowed again.
+  (They were disallowed in v0.1.0; see below.)
+  They're allowed by ES5, and differentiating between integers and floats may
+  make sense on some platforms. ([#16]; thanks [@Midar].)
+
+- New: `Infinity` and `-Infinity` are now allowed number literals.
+  ([#30]; thanks [@pepkin88].)
+
+- New: Plus signs (`+`) in front of numbers are now allowed, since it can
+  be helpful in some contexts to explicitly mark numbers as positive.
+  (E.g. when a property represents changes or deltas.)
+
+- Fix: unescaped newlines in strings are rejected now.
+  ([#24]; thanks [@Midar].)
+
+
+### v0.1.0 [[code][c0.1.0], [diff][d0.1.0]]
+
+[c0.1.0]: https://github.com/json5/json5/tree/v0.1.0
+[d0.1.0]: https://github.com/json5/json5/compare/v0.0.1...v0.1.0
+
+This release tightens JSON5 support and adds helpful utility features:
+
+- New: Support hexadecimal numbers. (Thanks [@MaxNanasy].)
+
+- Fix: Reject octal numbers properly now. Previously, they were accepted but
+  improperly parsed as base-10 numbers. (Thanks [@MaxNanasy].)
+
+- **Breaking:** Reject "noctal" numbers now (base-10 numbers that begin with a
+  leading zero). These are disallowed by both JSON5 and JSON, as well as by
+  ES5's strict mode. (Thanks [@MaxNanasy].)
+
+- New: Support leading decimal points in decimal numbers.
+  (Thanks [@MaxNanasy].)
+
+- **Breaking:** Reject trailing decimal points in decimal numbers now. These
+  are disallowed by both JSON5 and JSON. (Thanks [@MaxNanasy].)
+
+- **Breaking:** Reject omitted elements in arrays now. These are disallowed by
+  both JSON5 and JSON.
+
+- Fix: Throw proper `SyntaxError` instances on errors now.
+
+- New: Add Node.js `require()` hook. Register via `json5/lib/require`.
+
+- New: Add Node.js `json5` executable to compile JSON5 files to JSON.
+
+
+### v0.0.1 [[code][c0.0.1], [diff][d0.0.1]]
+
+[c0.0.1]: https://github.com/json5/json5/tree/v0.0.1
+[d0.0.1]: https://github.com/json5/json5/compare/v0.0.0...v0.0.1
+
+This was the first implementation of this JSON5 parser.
+
+- Support unquoted object keys, including reserved words. Unicode characters
+  and escape sequences sequences aren't yet supported.
+
+- Support single-quoted strings.
+
+- Support multi-line strings.
+
+- Support trailing commas in arrays and objects.
+
+- Support comments, both inline and block.
+
+
+### v0.0.0 [[code](https://github.com/json5/json5/tree/v0.0.0)]
+
+Let's consider this to be Douglas Crockford's original [json_parse.js] — a
+parser for the regular JSON format.
+
+
+[json_parse.js]: https://github.com/douglascrockford/JSON-js/blob/master/json_parse.js
+[v8-hex-fix]: http://code.google.com/p/v8/issues/detail?id=2240
+
+[@MaxNanasy]: https://github.com/MaxNanasy
+[@Midar]: https://github.com/Midar
+[@pepkin88]: https://github.com/pepkin88
+[@rowanhill]: https://github.com/rowanhill
+[@aeisenberg]: https://github.com/aeisenberg
+[@jordanbtucker]: https://github.com/jordanbtucker
+[@amb26]: https://github.com/amb26
+
+[#1]: https://github.com/json5/json5/issues/1
+[#16]: https://github.com/json5/json5/issues/16
+[#24]: https://github.com/json5/json5/issues/24
+[#30]: https://github.com/json5/json5/issues/30
+[#32]: https://github.com/json5/json5/issues/32
+[#36]: https://github.com/json5/json5/issues/36
+[#57]: https://github.com/json5/json5/issues/57
+[#58]: https://github.com/json5/json5/pull/58
+[#60]: https://github.com/json5/json5/pull/60
+[#63]: https://github.com/json5/json5/pull/63
+[#66]: https://github.com/json5/json5/issues/66
+[#67]: https://github.com/json5/json5/issues/67
+[#68]: https://github.com/json5/json5/issues/68
+[#70]: https://github.com/json5/json5/issues/70
+[#71]: https://github.com/json5/json5/issues/71
+[#72]: https://github.com/json5/json5/issues/72
+[#84]: https://github.com/json5/json5/pull/84
+[#89]: https://github.com/json5/json5/pull/89
+[#97]: https://github.com/json5/json5/pull/97
+[#101]: https://github.com/json5/json5/pull/101
+[#108]: https://github.com/json5/json5/pull/108
+[#134]: https://github.com/json5/json5/pull/134
+[#154]: https://github.com/json5/json5/issues/154
+[#181]: https://github.com/json5/json5/issues/181
+[#182]: https://github.com/json5/json5/issues/182
+[#187]: https://github.com/json5/json5/issues/187
+[#196]: https://github.com/json5/json5/issues/196
+[#208]: https://github.com/json5/json5/issues/208
+[#210]: https://github.com/json5/json5/issues/210

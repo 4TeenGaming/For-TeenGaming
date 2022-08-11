@@ -1,33 +1,14 @@
-'use strict';
+var Buffer = require('buffer').Buffer; // for use with browserify
 
-//all requires must be explicit because browserify won't work with dynamic requires
-module.exports = {
-  '$ref': require('./ref'),
-  allOf: require('./allOf'),
-  anyOf: require('./anyOf'),
-  '$comment': require('./comment'),
-  const: require('./const'),
-  contains: require('./contains'),
-  dependencies: require('./dependencies'),
-  'enum': require('./enum'),
-  format: require('./format'),
-  'if': require('./if'),
-  items: require('./items'),
-  maximum: require('./_limit'),
-  minimum: require('./_limit'),
-  maxItems: require('./_limitItems'),
-  minItems: require('./_limitItems'),
-  maxLength: require('./_limitLength'),
-  minLength: require('./_limitLength'),
-  maxProperties: require('./_limitProperties'),
-  minProperties: require('./_limitProperties'),
-  multipleOf: require('./multipleOf'),
-  not: require('./not'),
-  oneOf: require('./oneOf'),
-  pattern: require('./pattern'),
-  properties: require('./properties'),
-  propertyNames: require('./propertyNames'),
-  required: require('./required'),
-  uniqueItems: require('./uniqueItems'),
-  validate: require('./validate')
+module.exports = function (a, b) {
+    if (!Buffer.isBuffer(a)) return undefined;
+    if (!Buffer.isBuffer(b)) return undefined;
+    if (typeof a.equals === 'function') return a.equals(b);
+    if (a.length !== b.length) return false;
+    
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] !== b[i]) return false;
+    }
+    
+    return true;
 };
